@@ -73,5 +73,16 @@ function randomCall() {
     if (err) {
         console.log("ERROR REPORTED: ", err);
     }
-
+    var dataArray = data.split(",");
+    action = dataArray[0];
+    value = dataArray[1];
+    if (action === "concert-this") {
+        bandsInTown(value);
+    }
+    else if (action === "spotify-this-song") {
+        spotifyThis(value);
+    } else {
+        movieSearch(value);
+    }
+});
 }
