@@ -15,12 +15,15 @@ var concertQuery = "https://rest.bandsintown.com/artists/" + searchField + "/eve
 
 /* ---------------- Switches ----------------*/
 switch (command) {
-  // case "spotify-this-song":
-  //   spotThis()
-  //    break:
+  case "spotify-this-song":
+    spotThis();
+    break;
   case "concert-this":
-    concertThis()
-  //   break:
+    concertThis();
+    break;
+  case "randomCall":
+    randomCall();
+      break;
 }
 
 /* ---------------- Spotify This ------------------*/
@@ -46,7 +49,7 @@ function spotThis() {
   }
 }
 
-/* ---------------- Concert This ------------------*/
+/* ---------------- Concert This / Bands in Town ------------------*/
 function concertThis() {
 axios.get(concertQuery).then(function (response) { 
   console.log("Venue Name: " + response.data[0].venue.name);
@@ -64,7 +67,14 @@ axios.get(concertQuery).then(function (response) {
 
 
 /* ---------------- Movie This ------------------*/
+var movieQuery =  "https://www.omdbapi.com/?t=" + value + "&y=&plotshort&apikey=bf485d7d"
 
+function movieThis() {
+  axios.get(movieQuery).then(function (response) {
+    console.log("Movie Name: " + response.data.title)
+    console.log("------------------");
+  })
+}
 
 
 /* ---------------- Do What It Says ------------------*/
@@ -77,12 +87,12 @@ function randomCall() {
     action = dataArray[0];
     value = dataArray[1];
     if (action === "concert-this") {
-        bandsInTown(value);
+        concertThis(value);
     }
     else if (action === "spotify-this-song") {
         spotifyThis(value);
     } else {
-        movieSearch(value);
+        movieThis(value);
     }
 });
 }
