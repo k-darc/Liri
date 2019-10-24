@@ -53,7 +53,7 @@ axios.get(concertQuery).then(function (response) {
   console.log("------------------");
   console.log("Location: " + response.data[0].venue.city + ", " + response.data[0].venue.region);
   console.log("------------------");
-  console.log("Event Date: " + (response.data[0].datetime).format("MM/DD/YYYY"));
+  console.log("Event Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
   console.log("------------------");
   
 }).catch(function (error) {
