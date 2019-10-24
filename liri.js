@@ -68,3 +68,10 @@ axios.get(concertQuery).then(function (response) {
 
 
 /* ---------------- Do What It Says ------------------*/
+function randomCall() {
+  fs.readFile("random.txt", "utf8", (err, data) => {
+    if (err) {
+        console.log("ERROR REPORTED: ", err);
+    }
+
+}
