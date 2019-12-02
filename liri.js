@@ -45,7 +45,7 @@ function spotThis(songChoice) {
       console.log(data.tracks.items[0].artists[0].name);
       console.log("\n----------SPOTIFY LINK")
       console.log(data.tracks.items[0].artists[0].external_urls.spotify);
-      console.log("\n----------BAND NAME")
+      console.log("\n----------SONG NAME")
       console.log(data.tracks.items[0].album.name);
       console.log("\n----------ALBUM")
       console.log(data.tracks.items[1].name);
