@@ -24,7 +24,7 @@ Similar to Apple's SIRI- LIRI is a command line node app that displays data to y
     * Type "node liri.js spotify-this-song back in black"
     * The Band, Spotify Link, Song & Album will display.
 
-2. Find the most recent concert information for a band.
+2. Find recent venue for a band.
     * Type "node liri.js concert-this maroon5"
     * The Venue name, location and event date will display.
 
